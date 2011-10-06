@@ -44,6 +44,33 @@ public class  Main
             phone = (String) p.get("google.phone");
 
     }
+    
+    public static void text(String message, String phone)
+    {
+    	try {
+    		Voice voice = new Voice(username, pass);
+    		System.out.println("Sending a wake up call to adam @ " + phone);
+    		voice.sendSMS(phone, "Hello Adam, I am your wake up bot, If you're not already awake, you should be.");
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    }
+    public static void call(String phone)
+    {
+    	try {
+    		Voice voice = new Voice(username, pass);
+    		System.out.println("Sending a wake up call to adam @ " + phone);
+    		//voice.sendSMS(phone, "Hello Adam, I am your wake up bot, If you're not already awake, you should be.");
+    		// *sad panda* wish I could send a wave file and hang up as a call.
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    		System.out.println(e.getMessage());
+    	}
+    }    
+    
+    
     public static void main(String args[] ) 
     {
         readProperties();
@@ -52,15 +79,9 @@ public class  Main
             System.err.println("Property file is invalid.. please check your settings and try again");
             System.exit(-1);
         }
+        text("Hello Adam, I am your wake up bot, If you're not already awake, you should be.", phone);
+        
 
-        try {
-            Voice voice = new Voice(username, pass);
-            System.out.println("Sending a wake up call to adam @ " + phone);
-            voice.sendSMS(phone, "Hello Adam, I am your wake up bot, If you're not already awake, you should be.");
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
     }
 }
 
