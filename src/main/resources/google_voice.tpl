@@ -3,3 +3,4 @@
 google.username=
 google.password=
 google.phone=
+google.message=

@@ -11,6 +11,7 @@ public class  Main
     private static String username = null;;
     private static String pass = null;
     private static String phone = null;
+    private static String message = null;
 
 
     public static void readProperties()
@@ -43,17 +44,21 @@ public class  Main
         if(p.get("google.phone") != null)
             phone = (String) p.get("google.phone");
 
+       if(p.get("google.message") != null)
+            message = (String) p.get("google.message");
+
     }
     
-    public static void text(String message, String phone)
+    public static void text(String phone)
     {
     	try {
     		Voice voice = new Voice(username, pass);
-    		System.out.println("Sending a wake up call to adam @ " + phone);
-    		voice.sendSMS(phone, "Hello Adam, I am your wake up bot, If you're not already awake, you should be.");
+    		System.out.println("Sending a message to user @ " + phone);
+    		voice.sendSMS(phone, message);
     	} catch (IOException e) {
     		// TODO Auto-generated catch block
     		e.printStackTrace();
+            System.exit(1);
     	}
     }
     public static void call(String phone)
@@ -79,7 +84,7 @@ public class  Main
             System.err.println("Property file is invalid.. please check your settings and try again");
             System.exit(-1);
         }
-        text("Hello Adam, I am your wake up bot, If you're not already awake, you should be.", phone);
+        text(phone);
         
 
     }
