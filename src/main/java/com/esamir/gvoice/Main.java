@@ -66,7 +66,7 @@ public class  Main
     	try {
     		Voice voice = new Voice(username, pass);
     		System.out.println("Sending a wake up call to adam @ " + phone);
-    		//voice.sendSMS(phone, "Hello Adam, I am your wake up bot, If you're not already awake, you should be.");
+    		voice.call("123-456-7890", "123-457-8900", "cell" );
     		// *sad panda* wish I could send a wave file and hang up as a call.
     	} catch (IOException e) {
     		// TODO Auto-generated catch block
