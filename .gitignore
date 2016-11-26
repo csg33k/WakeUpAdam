@@ -1,2 +1,5 @@
 src/main/resources/google_voice.properties
 target
+.idea
+.gradle
+build
