@@ -150,11 +150,12 @@
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
           <version>4.8.2</version>
+          <scope>test</scope>
       </dependency> 
       <dependency>
-        <groupId>com.googlecode.google-voice-java</groupId>
-        <artifactId>google-voice-java</artifactId>
-        <version>2.0-SNAPSHOT</version>
+          <groupId>com.esamir.osalt</groupId>
+          <artifactId>google-voice-java</artifactId>
+          <version>1.0.3</version>
       </dependency>
     </dependencies>
 </project>
